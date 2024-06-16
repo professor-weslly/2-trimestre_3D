@@ -6,10 +6,16 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Qual sua opinião sobre o chat gpt?,
+        enunciado: "Qual sua opinião sobre o chat gpt?",
             alternativas: [
-            "Isso é assustador!",
-            "Isso é maravilhoso!"
+       /* { */   
+            texto: "Isso é assustador!",
+            afirmação: "afirmação"
+        /*}, */
+          /* { */   
+            texto: "Isso é assustador!",
+            afirmação: "afirmação"
+        /*}, */ fazer isso para todas as perguntas      
         ]
     },
     {
@@ -50,9 +56,8 @@ function mostraPergunta() {
     caixaPerguntas.textContent = perguntaAtual.enunciado;
     mostraAlternativas();
 }
-
 function mostraAlternativas() {
-    for (const alternativa of perguntaAtual.alternativas) {
+    for(const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa;
         caixaAlternativas.appendChild(botaoAlternativas);
