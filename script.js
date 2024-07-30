@@ -10,11 +10,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Isso é assustador!",
-                afirmacao: "afirmação"
+                afirmação: "afirmação"
             },
             {
                 texto: "Isso é maravilhoso!",
-                afirmacao: "afirmação"
+                afirmção: "afirmação"
             }
         ]
     },
@@ -23,11 +23,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Utiliza uma ferramenta de busca na internet que utiliza IA para que ela ajude a encontrar informações relevantes para o trabalho e explique numa linguagem que facilite o entendimento.",
-                afirmacao: "afirmação"
+                afirmação: "afirmação"
             },
             {
                 texto: "Escreve o trabalho com base nas conversas que teve com colegas, algumas pesquisas na internet e conhecimentos próprios sobre o tema.",
-                afirmacao: "afirmação"
+                afirmação: "afirmação"
             }
         ]
     },
@@ -36,11 +36,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Defende a ideia de que a IA pode criar novas oportunidades de emprego e melhorar habilidades humanas.",
-                afirmacao: "afirmação"
+                afirmação: "afirmação"
             },
             {
                 texto: "Me preocupo com as pessoas que perderão seus empregos para máquinas e defendem a importância de proteger os trabalhadores.",
-                afirmacao: "afirmação"
+                afirmação: "afirmação"
             }
         ]
     },
@@ -49,11 +49,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Criar uma imagem utilizando uma plataforma de design como o Paint.",
-                afirmacao: "afirmação"
+                afirmação: "afirmação"
             },
             {
                 texto: "Criar uma imagem utilizando um gerador de imagem de IA.",
-                afirmacao: "afirmação"
+                afirmação: "afirmação"
             }
         ]
     },
@@ -62,11 +62,11 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Escrever comandos para o chat é uma forma de contribuir com o trabalho, por isso não é um problema utilizar o texto inteiro.",
-                afirmacao: "afirmação"
+                afirmação: "afirmação"
             },
             {
                 texto: "O chat pode ser uma tecnologia muito avançada, mas é preciso manter a atenção pois toda máquina erra, por isso revisar o trabalho e contribuir com as perspectivas pessoais é essencial.",
-                afirmacao: "afirmação"
+                afirmação: "afirmação"
             }
         ]
     },
@@ -77,13 +77,13 @@ let perguntaAtual;
 let historiaFinal = ""; 
 
 function mostraPergunta() {
- /*    if(atual >= perguntas.length){
+        if(atual >= perguntas.length){
         mostraResultado();
         return;
-    }   */ 
+    }   
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
- /* caixaAlternativas.textContent = ""; */
+    caixaAlternativas.textContent = ""; 
     mostraAlternativas();
 }
 function mostraAlternativas() {
@@ -96,17 +96,17 @@ function mostraAlternativas() {
 }
 
 function respostaSelecionada(opcaoSelecionada){
-            const afirmacoes = opcaoSelecionada.afirmacoes; /* mudar para opcaoSelecionada.afirmacao*/
-            historiaFinal = afirmacoes; /* += afirmacoes + " "; */
+            const afirmacoes = opcaoSelecionada.afirmação
+            historiaFinal += afirmacoes + " "; 
             atual++;
             mostraPergunta();
       }
-/*
+
 function mostraResultado(){
     caixaPerguntas.textContent = "Em 2049..."
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent ="";
 }
-*/
+
 mostraPergunta();
 
